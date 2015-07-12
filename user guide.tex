@@ -1,6 +1,6 @@
 \documentclass[titlepage,oneside,11pt]{book}
-\author{Nikita Belyavskij}
-% Need to add subtitle
+%\author{Nikita Belyavskij}
+
 \title{EFL Edje Theme Editor 0.5}
 
 \usepackage{xcolor,graphicx}
@@ -94,8 +94,20 @@ The "{}textblock style manager"{} provide user interface for easy management sty
 \includegraphics[scale=0.3]{images/textblock_manager_main.png}\newline
 More information about "{}textblock style manager"{} features written at 4.3.4.
 \section{Edit project}
-\subsection{Styles}
+Project is created, what is next? It is time to edit. It's mean add styles, parts, programs and etc.\newline
+All styles, that included in project are separeted in two groups. One group is represent elementary widget styles and second group contain layouts.
+\subsection{Widget styles}
+Elementary library have requrements to the widget styles namespacing. All widget style names have that structure: elm/[widget name]/[class name]/[style name]. EFL edje theme editor tool use this rule for detect widget styles. For represent this namespacing rule in user interface uses multilevel lists. Top level list contain all widget names, styles of that included into project.\newline
+\includegraphics[scale=0.5]{images/widget_list.png}
+\includegraphics[scale=0.5]{images/class_list.png}\newline
+Here no ability to add new widgets all neccessary widgets should added on stage creating new project. [Tip: it is possible to add new widget inside widget list. In layout list should be created new layout with name that support Elementary styles namespacing. Like elm/button/base/default. After saving and reopen project widget "{}button"{} will present inside widget list]\newline
+The second level of widget style hierarchy contain classes and styles for choosen widget. Usually widget class is mean that all styles inside this class will be do the same things but with different UI. For example: widget "{}button"{} have class "{}base"{}, all styles in this class are implement emit signals when button pressed and unpressed. But two styles in this class has different user interface. Just compare style "{}default"{} and "{}anchor"{}.\newline
+Style list provide functionality to manage styles: add new or delete already presesented. [Tip: style class can be deleted also in two ways. First is select class and press delete button above list. This opertaion requare a lot of time. Or delete all styles inside class, after delete last style in class, it will delete also. For add new class, need add new style with class name that didn't present in opened widget.]
 \subsection{Layouts}
+Layouts in EFL Edje Theme editor tools is a styles that have names different from Elementary namespacing. For example: project contain style with name "{}terminology/about"{}, this style will interpetied like layout, because in name miss prefix "{}elm"{}.\newline
+Layout list provide functionality for add new layouts or delete present. Note: name of created layout can not be changed after creating.\newline
+Layout list look the same as widget list, but here absent second level list with classes if styles.\newline
+\includegraphics[scale=0.5]{images/layout_list.png}\newline
 \subsection{Parts}
 \subsubsection{States}
 \subsubsection{Attributes}
