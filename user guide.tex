@@ -109,6 +109,19 @@ Layout list provide functionality for add new layouts or delete present. Note: n
 Layout list look the same as widget list, but here absent second level list with classes if styles.\newline
 \includegraphics[scale=0.5]{images/layout_list.png}\newline
 \subsection{Parts}
+The part is the basic primitive. Parts discribe how style will look and feel, how styles will react on external signals.\newline %add more description here
+Edje library support three group of the part types: containers, primitives and proxyes.
+Containers is the part wich provide placement external object inside style. When needed to place some buttons, lists and etc should be used box, table, swallow part type.\newline
+\includegraphics[scale=0.2]{images/container_example.jpg}\newline %change this image to something more specific 
+On screenshot above, area wich filled by grid is swallow part. In runtime possible to place object inside this area by using Elementary or EFL API. It depends from which kind of object is used. Is it Edje Object, elm layout or different widget.\newline
+Second group is graphic and non-visible primitives. Such types like a rectangle, image, text, textblock, spacer. All this types of parts, exclude spacer, is provide draw something on canvas. Spacer is necessary part for cases when requred offset of part from other primitives or layout. Usage spacer instead offset attaribute from object area block, because spacer part can be scaled and offset is hard fixed.\newline
+Third types are proxy and group. This parts provide to proxy images from internal source. Internal here is mean that source part or group is place in the same collection ot style.\newline
+Efl Edje Theme Editor provide management part with types described above. UI element that help to manage parts called "{}Part List"{}\newline
+\includegraphics[scale=0.5]{images/part_list.png}\newline
+List contain controls for add/remove and restack parts. Actualy for fast management can be used hotkey "{}Delete"{} for delete part, and long press on part to activate restack mode.\newline
+%add screenshot that contain mouse restack sitauation.
+\includegraphics[scale=0.2]{images/part_add_dialog.jpg}\newline
+This dialog requre  only fill the name entry. Filled name can be changed late.
 \subsubsection{States}
 \subsubsection{Attributes}
 \subsection{Programs}
@@ -187,4 +200,4 @@ Manipulating rulers functions placed in rulers submenu
 \section{Hotkeys}
 \section{Example application}
 %Describe little thing like hotkeys, tips and examples
-\end{document}
+\end{document}[scale
