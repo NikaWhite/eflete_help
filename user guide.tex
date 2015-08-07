@@ -123,8 +123,16 @@ List contain controls for add/remove and restack parts. Actualy for fast managem
 \includegraphics[scale=0.2]{images/part_add_dialog.jpg}\newline
 This dialog requre  only fill the name entry. Filled name can be changed late.
 \subsubsection{States}
+Concept of states is powerfull tool for animate style, or create some kind of reaction on different signals from internal or external sources. Each state is describe how part will look, where it will be placed. Very often style creted in that way, when parts depends one of another. In this case changing state of one part is change geometry of depends parts.\newline
+States include attributes that describe geometry, look and specific attributes (like font name, image source, etc). Knowleadge how states works is very important for create excelent looking and effective works styles.\newline
+EFL Edje Theme Editor contain "{}States List"{} tool. In this list present ability to switch beetwen different states in the part, create new or delete already exist states (Note: "default" 0.0 could not be deleted). Add state dialog contain dropdown menu for chosing state, that attribute values should be copied into new state.\newline
+\includegraphics[scale=0.2]{images/state_add_dialog.jpg}\newline
+How to create some flow of dynamic change of style view need to know how works programs. Material about this is described in section 3.4.4.
 \subsubsection{Attributes}
+This is lowerest level of style abstraction. %fill this section immediatly
 \subsection{Programs}
+In previous chapters says how to create static style, that will work fast. Good time to add some dynamic and reaction to enviroment. To create animation and manage signals in Edje library support programs conception. Developer need to describe what signals will initiate what kind of actions. It is very simply and in the same time powerful feature.\newline
+
 \subsection{Workspace}
 \section{Live preview}
 \section{History}
